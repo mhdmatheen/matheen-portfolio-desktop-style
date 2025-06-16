@@ -7,7 +7,7 @@ export default function ProjectsWindow () {
         <div className="bg-slate-100 p-6">
             <WindowHeader title="Projects" description="My noteworthy projects from which I have learned a lot" icon="/folders.png" />
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {projects.map((project, idx) => (
                     <div key={idx} className="bg-white p-4 rounded-xl border border-white/20 shadow-lg space-y-2">
                         <h2 className="font-semibold">{project.title}</h2>

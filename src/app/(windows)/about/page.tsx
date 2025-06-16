@@ -32,12 +32,12 @@ export default function AboutWindow() {
 
                         <p className="italic font-semibold sm:text-left text-center">
                             Want to know more about me?
-                        </p>
+                        </p>exp
 
                         <div className="flex flex-col items-center sm:items-start">
                             <button 
                                 onClick={() => setShowJourney(true)}
-                                className="bg-blue-500 hover:bg-blue-800 text-white py-3 px-5 rounded shadow cursor-pointer font-semibold monospace text-md flex gap-1 items-center">More About Me <Footprints /></button>
+                                className="bg-blue-500 hover:bg-blue-800 text-white py-3 px-5 rounded shadow cursor-pointer font-semibold monospace text-md flex gap-1 items-center">View my journey <Footprints /></button>
                         </div>
                         <div className="text-xs mt-4 text-slate-500 font-medium flex sm:flex-row flex-col gap-1 items-center"><Info size={16} /> or click on the {startButton()} button below to explore more.</div>
                     </div>

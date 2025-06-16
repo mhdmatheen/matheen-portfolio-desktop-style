@@ -4,7 +4,7 @@ import { experiences } from "@/config/seeds/experience-data";
 
 export default function ExperiencesWindow () {
     return (
-        <div className="h-full bg-white/60 md:max-w-[50vw] p-6">
+        <div className="h-full bg-white/60 sm:max-w-[50vw] md:max-w-[40vw] lg:max-w-[30vw] p-6">
             <WindowHeader title="Experiences" description="My experiences gained over the years" icon="/suitcase.png" />
             <div className="space-y-6 dark:text-slate-700 ">
                 {experiences.map((exp, idx) => (
