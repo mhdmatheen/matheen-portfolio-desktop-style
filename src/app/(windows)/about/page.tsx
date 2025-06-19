@@ -17,7 +17,7 @@ export default function AboutWindow() {
     }
 
     return (
-        <div className="h-full bg-gradient-to-b from-slate-200 to-white/80 backdrop-blur-3xl lg:max-h-[calc(70vh-100px)] overflow-y-auto">
+        <div className="h-full bg-gradient-to-b from-slate-200 to-white/80 backdrop-blur-3xl lg:max-h-[calc(70vh-100px)] max-w-[60vw] overflow-y-auto">
             {!showJourney &&             
                 <div className="flex flex-col sm:flex-row gap-2 items-center">
                     <Image src={imageLink} alt="about me" draggable={false} width={400} height={400} className="w-sm" />
@@ -32,7 +32,7 @@ export default function AboutWindow() {
 
                         <p className="italic font-semibold sm:text-left text-center">
                             Want to know more about me?
-                        </p>exp
+                        </p>
 
                         <div className="flex flex-col items-center sm:items-start">
                             <button 
@@ -46,11 +46,11 @@ export default function AboutWindow() {
 
             {showJourney && (
                 <div className="bg-white h-full">
-                    <div className="sticky top-0 z-20 border-b backdrop-blur-lg border-slate-300 bg-gradient-to-b from-cyan-100/50 to-cyan-300/50 from-60% to-60% text-cyan-900 transition-all duration-300">
+                    <div className="sticky top-0 flex items-center text-white bg-gradient-to-b from-blue-50 via-blue-100 to-blue-50 from-60% via-60%">
                         <button 
                             onClick={() => setShowJourney(false)}
-                            className="text-xs px-2 py-1 cursor-pointer font-semibold monospace text-md flex gap-1 items-center from-60% to-60% hover:bg-gradient-to-b hover:from-cyan-100/80 hover:to-cyan-300/80">
-                                <ArrowLeft /> Go Back
+                            className="text-xs px-2 py-1 cursor-pointer font-medium monospace text-md flex gap-1 items-center text-slate-900 hover:border-blue-50 border border-transparent rounded hover:bg-blue-300/30">
+                                <ArrowLeft className="opacity-70"/> Go Back
                         </button>
                     </div>
                     <div className="px-2 py-8 lg:px-8 z-10 lg:max-w-[700px] mx-auto bg-white">
