@@ -68,6 +68,50 @@ body {
   @apply overflow-hidden;
 }
 
+.maximize-button, .minimize-button, .close-button {
+  @apply transition-all duration-300;
+}
+
+.maximize-button, .minimize-button {
+  width: 46px;
+  background: -webkit-linear-gradient(top, #b5c8dd 0%, #8ca6c3 49%, #52769f 50%, #7da4d6 100%);
+  background: -moz-linear-gradient(top, #b5c8dd 0%, #8ca6c3 49%, #52769f 50%, #7da4d6 100%);
+  background: -o-linear-gradient(top, #b5c8dd 0%, #8ca6c3 49%, #52769f 50%, #7da4d6 100%);
+  background: -ms-linear-gradient(top, #b5c8dd 0%, #8ca6c3 49%, #52769f 50%, #7da4d6 100%);
+  box-shadow: inset 1px -1px 0 rgba(255, 255, 255, 0.4),
+    inset -1px 0 0 rgba(255, 255, 255, 0.4),
+    inset 0 1px 0 #fff,
+    -1px 1px 0 rgba(83, 99, 116, 0.7);
+}
+
+
+.maximize-button:hover, .minimize-button:hover {
+  background: -webkit-linear-gradient(#b4d5ef 0%, #76a9d1 49%, #0a619f 50%, #31cde2 100%);
+  background: -moz-linear-gradient(#b4d5ef 0%, #76a9d1 49%, #0a619f 50%, #31cde2 100%);
+  background: -o-linear-gradient(#b4d5ef 0%, #76a9d1 49%, #0a619f 50%, #31cde2 100%);
+  background: -ms-linear-gradient(#b4d5ef 0%, #76a9d1 49%, #0a619f 50%, #31cde2 100%);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(10, 254, 251, 0.4),
+    inset -1px 0 0 rgba(255, 255, 255, 0.4),
+    inset 0 1px 0 #fff,
+    -1px 1px 0 rgba(83, 99, 116, 0.7),
+    -1px -1px 10px rgba(0, 255, 255, 0.253),
+    1px 1px 10px rgba(0, 255, 255, 0.253);
+}
+.maximize-button:active, .minimize-button:active {
+  background: -webkit-linear-gradient(#a2bbcd 0%, #58a5b4 49%, #0b2847 50%, #16d6c5 100%);
+  background: -moz-linear-gradient(#a2bbcd 0%, #58a5b4 49%, #0b2847 50%, #16d6c5 100%);
+  background: -o-linear-gradient(#a2bbcd 0%, #58a5b4 49%, #0b2847 50%, #16d6c5 100%);
+  background: -ms-linear-gradient(#a2bbcd 0%, #58a5b4 49%, #0b2847 50%, #16d6c5 100%);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 cyan,
+    inset -1px 0 0 rgba(255, 255, 255, 0.4),
+    inset 0 1px 0 #fff,
+    -1px 1px 0 rgba(83, 99, 116, 0.7),
+    -1px -1px 10px cyan,
+    1px 1px 10px cyan;
+}
+
 .close-button {
   width: 46px;
   background: -webkit-linear-gradient(top, #d1a2a3 0%, #c1736e 49%, #b33c2e 50%, #cea6a5 100%);
@@ -91,9 +135,9 @@ body {
     inset 0 -1px 0 rgba(245, 228, 119, 0.4),
     inset -1px 0 0 rgba(255, 255, 255, 0.4),
     inset 0 1px 0 #fff,
-    -1px 1px 0 rgba(118, 29, 16, 0.5),
-    1px 0 0 rgba(118, 29, 16, 0.7),
-    0 0 10px red,
+    -1px 1px 0 rgba(118, 29, 16, 0.1),
+    1px 0 0 rgba(118, 29, 16, 0.1),
+    0 0 10px rgba(255, 0, 0, 0.493),
     -1px -1px 10px rgba(255, 0, 0, 0.3),
     1px 1px 10px rgba(255, 0, 0, 0.3);
 }

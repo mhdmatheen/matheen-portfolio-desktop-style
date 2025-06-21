@@ -17,7 +17,7 @@ export default function AboutWindow() {
     }
 
     return (
-        <div className="h-full bg-gradient-to-b from-slate-200 to-white/80 backdrop-blur-3xl lg:max-h-[calc(70vh-100px)] max-w-[60vw] overflow-y-auto">
+        <div className="h-full bg-gradient-to-b from-slate-200 to-white/80 backdrop-blur-3xl lg:max-h-[calc(70vh-100px)] md:max-w-[60vw] overflow-y-auto">
             {!showJourney &&             
                 <div className="flex flex-col sm:flex-row gap-2 items-center">
                     <Image src={imageLink} alt="about me" draggable={false} width={400} height={400} className="w-sm" />

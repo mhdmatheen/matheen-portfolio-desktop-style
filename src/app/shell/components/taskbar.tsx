@@ -109,7 +109,7 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
                 <div className="border-r h-full border-white/20 mr-2">&nbsp;</div>
 
                 {/* Open Apps Scrollable Container */}
-                <div className="flex-1 py-2 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent">
+                <div className="flex-1 py-2 pr-6 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent">
                     <div className="flex gap-2">
                         {openApps && openApps.length > 0 && openApps.map((app) => {
                             const matchedItem = startMenuItems.find(item => item.app === app);
@@ -118,7 +118,7 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
                                     key={app}
                                     onClick={() => { onAppClick(app); setCurrentWindow(app); }}
                                     className={`
-                                        px-3 py-1 text-white text-sm rounded hover:bg-white/20 transition border flex items-center gap-2
+                                        px-3 py-1 text-white text-sm rounded hover:bg-white/20 transition border flex items-center gap-2 min-w-[8rem]
                                         ${currentWindow == app
                                             ? 'border-white/20 shadow-md shadow-white/10 backdrop-blur-sm bg-gradient-to-b from-white/10 to-cyan-200/10 from-80%'
                                             : 'border-white/10'}

@@ -25,6 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="light" data-theme="light">
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#ffffff" />
         <meta name="color-scheme" content="light only" />
         <link rel="icon" href="/favicon.png" />
         <link rel="shortcut icon" href="/favicon.png" />

@@ -93,7 +93,7 @@ export default function ProjectsWindow () {
                     >
                         <div id={project.id} className={`px-3 py-2 border-b border-slate-300 ${selectedProjectId === project.id ? "bg-gradient-to-b from-yellow-50 via-yellow-100 to-yellow-50 from-70% via-70%" : ""}`}>
                             <div className="font-medium text-sm">{project.title}</div>
-                            <div className="text-xs text-slate-500">{project.company}</div>
+                            <div className="text-xs text-slate-500">{project.description}</div>
                         </div>
                         <div className={`bg-slate-100 ${selectedProjectId === project.id ? "h-auto" : "h-0"} smooth-transition transition-all duration-300 overflow-hidden`}>
                             <ProjectPage project={project} />
