@@ -1,4 +1,7 @@
 import { IProject } from "@/config/seeds/projects";
+import TechStack from "../components/tech-stack";
+import ProjectHeading from "../components/project-heading";
+import ProjectBody from "../components/project-body";
 
 interface CustomWebsitesProps {
     project: IProject;
@@ -6,22 +9,9 @@ interface CustomWebsitesProps {
 
 export default function CustomWebsites({ project }: CustomWebsitesProps) {
     return (
-        <div className="p-6 flex flex-col items-start">
-            <div>
-                <h1 className="text-xl">{project.title}</h1>
-                <div className="text-sm text-slate-500">{project.description}</div>
-            </div>
-            <div className="flex gap-2 flex-wrap py-3">
-                {project.tags.map((tag, idx) => (
-                    <span
-                        key={idx}
-                        className="text-xs text-slate-500 bg-slate-100 rounded-full px-2 py-1"
-                    >
-                        {tag}
-                    </span>
-                ))}
-            </div>
-            <div className="mt-4 space-y-4">
+        <div className="p-6 space-y-12">
+            <ProjectHeading project={project} />
+            <ProjectBody verticallyCentered={true}>
                 <p>More than 20 custom tailored websites for clients based on business requirements</p>
                 <p>Some notable websites I have made are:</p>
                 <ul className="list-disc pl-8 text-xs font-medium">
@@ -36,7 +26,10 @@ export default function CustomWebsites({ project }: CustomWebsitesProps) {
                     <li>Rao Hospital</li>
                     <li>Kurryzo: Food Delivery</li>
                 </ul>
-            </div>
+            </ProjectBody>
+            <ProjectBody horizontallyCentered={true} verticallyCentered={true}>
+                <TechStack project={project} />
+            </ProjectBody>
         </div>
     );
 }

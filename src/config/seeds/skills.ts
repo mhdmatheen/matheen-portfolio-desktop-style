@@ -38,6 +38,14 @@ export const skills = {
         { title: "Docker", icon: "devicon-docker-plain" },
         { title: "Azure", icon: "devicon-azure-plain" },
     ],
+    conceptual: [
+        { title: "AI Agents", icon: "" },
+        { title: "LLM", icon: "" },
+        { title: "Chatbots", icon: "" },
+        { title: "e-Commerce Development", icon: "" },
+        { title: "Mobile App Development", icon: "" },
+        { title: "Web Development", icon: "" },
+    ],
     management: [
         { title: "Agile", icon: "fa-solid fa-rotate" },
         { title: "Scrum", icon: "fa-regular fa-calendar-days" },
@@ -51,6 +59,9 @@ export const skills = {
         { title: "Time Management", icon: "fa-solid fa-clock" },
         { title: "Adaptability", icon: "fa-solid fa-building" },
         { title: "Leadership", icon: "fa-solid fa-user-tie" },
+        { title: "Creative Thinking", icon: "fa-solid fa-brain" },
+        { title: "Quick Learning", icon: "fa-solid fa-book" },
+        { title: "Digital Marketing", icon: "fa-solid fa-globe" },
     ],
     languages: [
         { title: "English", icon: "fa-solid fa-earth-americas" },

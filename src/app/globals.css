@@ -52,6 +52,10 @@ body {
   font-family: monospace;
 }
 
+.smooth-transition {
+  interpolate-size: allow-keywords; 
+}
+
 .window {
   background: -webkit-linear-gradient(30deg, #5591ce 0%, #0d61ba 20%, #3780cb22 28%, #166ac1 34%, #66a0d944 60%, #166ac144 70%, #5591ce 100%);
   background: -moz-linear-gradient(30deg, #5591ce 0%, #0d61ba 20%, #3780cb22 28%, #166ac1 34%, #66a0d944 60%, #166ac144 70%, #5591ce 100%);
