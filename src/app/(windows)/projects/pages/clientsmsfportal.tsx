@@ -9,7 +9,7 @@ interface ClientPortalProps {
 
 export default function ClientPortal({ project }: ClientPortalProps) {
     return (
-        <div className="p-6 space-y-12">
+        <div className="md:p-6 space-y-0 md:space-y-12">
             <ProjectHeading project={project} />
             <ProjectBody verticallyCentered={true}>
                 <p>Client Portal is a dashboard application for SMSF and other type of clients to manage their given jobs and tasks.</p>

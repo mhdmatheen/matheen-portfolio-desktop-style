@@ -91,11 +91,11 @@ export default function ProjectsWindow () {
                         `}
                         onClick={() => handleProjectSelect(project.id)}
                     >
-                        <div id={project.id} className={`px-3 py-2 border-b border-slate-300 ${selectedProjectId === project.id ? "bg-gradient-to-b from-blue-50 via-blue-100 to-blue-50 from-60% via-60%" : ""}`}>
+                        <div id={project.id} className={`px-3 py-2 border-b border-slate-300 ${selectedProjectId === project.id ? "bg-gradient-to-b from-yellow-50 via-yellow-100 to-yellow-50 from-70% via-70%" : ""}`}>
                             <div className="font-medium text-sm">{project.title}</div>
                             <div className="text-xs text-slate-500">{project.company}</div>
                         </div>
-                        <div className={`bg-white ${selectedProjectId === project.id ? "h-auto" : "h-0"} smooth-transition transition-all duration-300 overflow-hidden`}>
+                        <div className={`bg-slate-100 ${selectedProjectId === project.id ? "h-auto" : "h-0"} smooth-transition transition-all duration-300 overflow-hidden`}>
                             <ProjectPage project={project} />
                         </div>
                     </div>

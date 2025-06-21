@@ -9,7 +9,7 @@ interface FinobiPageProps {
 
 export default function FinobiPage({ project }: FinobiPageProps) {
     return (
-        <div className="p-6 space-y-12">
+        <div className="md:p-6 space-y-0 md:space-y-12">
             <ProjectHeading project={project} />
             <ProjectBody verticallyCentered={true}>
                 <p>This project was developed in <strong>Next.js</strong> with <strong>FastAPI</strong> as the backend.</p>

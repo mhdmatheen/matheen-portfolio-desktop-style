@@ -9,7 +9,7 @@ interface CarismaLmsProps {
 
 export default function CarismaLms({ project }: CarismaLmsProps) {
     return (
-        <div className="p-6 space-y-12">
+        <div className="md:p-6 space-y-0 md:space-y-12">
             <ProjectHeading project={project} />
             <ProjectBody verticallyCentered={true}>
                 <p>Carisma LMS is a Learning Management System for Carisma Solutions</p>

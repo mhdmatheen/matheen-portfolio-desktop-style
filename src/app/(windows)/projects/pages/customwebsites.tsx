@@ -9,7 +9,7 @@ interface CustomWebsitesProps {
 
 export default function CustomWebsites({ project }: CustomWebsitesProps) {
     return (
-        <div className="p-6 space-y-12">
+        <div className="md:p-6 space-y-0 md:space-y-12">
             <ProjectHeading project={project} />
             <ProjectBody verticallyCentered={true}>
                 <p>More than 20 custom tailored websites for clients based on business requirements</p>

@@ -9,7 +9,7 @@ interface WeddingAppProps {
 
 export default function WeddingApp({ project }: WeddingAppProps) {
     return (
-        <div className="p-6 space-y-12">
+        <div className="md:p-6 space-y-0 md:space-y-12">
             <ProjectHeading project={project} />    
             <ProjectBody verticallyCentered={true}>
                 <p>Wedding App is a mobile app for wedding planning and management</p>

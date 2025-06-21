@@ -7,7 +7,7 @@ interface ProjectHeadingProps {
 
 export default function ProjectHeading({ project }: ProjectHeadingProps) {
     return (
-        <div className="flex flex-col items-center bg-white pt-3 px-3 rounded shadow aspect-video">
+        <div className="flex flex-col items-center bg-white pt-3 px-6 md:px-3 rounded shadow aspect-video">
             <div className="flex flex-col items-center">
                 <h1 className="text-xl">{project.title}</h1>
                 <div className="text-sm text-slate-500">{project.description}</div>
