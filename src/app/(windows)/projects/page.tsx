@@ -54,7 +54,7 @@ export default function ProjectsWindow () {
                 isSticky={true}
             />
 
-            <div className="items-stretch hidden md:flex h-[calc(100vh-280px)] overflow-hidden">
+            <div className="items-stretch hidden md:flex h-[calc(100vh-260px)] overflow-hidden">
                 <div className={`sidepanel flex-1 border-r border-slate-300 md:max-w-[200px] overflow-y-auto sticky top-[90px]`}>
                     <div className="space-y-2">
                         {projects.map((project, idx) => (
