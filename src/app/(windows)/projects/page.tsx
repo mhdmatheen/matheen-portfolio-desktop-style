@@ -11,7 +11,7 @@ import { useState } from "react";
 import { CircleArrowLeft } from "lucide-react";
 import Image from "next/image";
 
-export const ProjectPage: React.FC<{ project: IProject }> = ({ project }) => {
+const ProjectPage: React.FC<{ project: IProject }> = ({ project }) => {
     if(project) {
         switch (project.id) {
             case "finobi":
@@ -39,7 +39,6 @@ export const ProjectPage: React.FC<{ project: IProject }> = ({ project }) => {
 
 export default function ProjectsWindow () {
     const [selectedProjectId, setSelectedProjectId] = useState(projects[0].id);
-    const maxHeight = 420;
 
     const handleProjectSelect = (projectId: string) => {
         setSelectedProjectId(projectId);
