@@ -22,7 +22,7 @@ export default function Desktop() {
     { title: "Projects", component: <ProjectsWindow /> },
     { title: "Skills", component: <SkillsWindow /> },
     { title: "Code", component: <CodeWindow /> },
-    { title: "Feedback", component: <FeedbackWindow /> },
+    { title: "Feedback", component: <FeedbackWindow /> }
   ];
 
   useEffect(() => {

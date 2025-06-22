@@ -1,14 +1,16 @@
 "use client";
+import { windowItems } from "@/config/window-list";
 import { X } from "lucide-react";
+import React from "react";
 import { useRef, useState, useEffect } from "react";
 
 interface WindowProps {
-    title: string;
-    children: React.ReactNode;
-    onClose: () => void;
-    windowType?: "window" | "dialog";
-    currentWindow: string | null;
-    setCurrentWindow: (window: string | null) => void;
+  title: string;
+  children: React.ReactNode;
+  onClose: () => void;
+  windowType?: "window" | "dialog";
+  currentWindow: string | null;
+  setCurrentWindow: (window: string | null) => void;
 }
 
 export const Window = ({
@@ -32,7 +34,7 @@ export const Window = ({
       windowRef.current.style.left = `${x}px`;
       windowRef.current.style.top = `${y}px`;
     }
-  };  
+  };
 
   const onMouseDown = (e: React.MouseEvent) => {
     if (isMobile) return;
@@ -62,7 +64,7 @@ export const Window = ({
     } else {
       updatePosition(posRef.current.x, posRef.current.y);
     }
-  }, [isMobile]);  
+  }, [isMobile]);
 
   useEffect(() => {
     const onMouseMove = (e: MouseEvent) => {
@@ -87,6 +89,8 @@ export const Window = ({
     };
   }, [isMobile]);
 
+  const matchedItem = windowItems.find(item => item.app === title);
+
   return (
     <div
       ref={windowRef}
@@ -107,11 +111,15 @@ export const Window = ({
       <div className="backdrop-blur-3xl">
         <div
           onMouseDown={onMouseDown}
-          className={`${
-            isMobile ? "cursor-default" : "cursor-grab"
-          } text-white pl-4 pr-1 flex justify-between items-start rounded-t overflow-hidden`}
+          className={`${isMobile ? "cursor-default" : "cursor-grab"
+            } text-white pl-4 pr-1 flex justify-between items-start rounded-t overflow-hidden`}
         >
-          <div className="font-semibold text-shadow text-white text-stroke-3 tracking-wider py-2">{title}</div>
+          <div className="font-semibold text-shadow text-white text-stroke-3 tracking-wider py-2 flex items-center gap-2">
+            {matchedItem && React.cloneElement(matchedItem.icon, {
+              className: "w-4 h-4"
+            })}
+            {title}
+          </div>
           <button
             className="close-button text-white text-lg px-4 py-[3px] rounded-b-lg"
             onClick={onClose}

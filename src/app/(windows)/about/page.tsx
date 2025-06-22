@@ -17,7 +17,7 @@ export default function AboutWindow() {
     }
 
     return (
-        <div className="h-full bg-gradient-to-b from-slate-200 to-white/80 backdrop-blur-3xl lg:max-h-[calc(70vh-100px)] md:max-w-[60vw] overflow-y-auto">
+        <div className="h-full bg-gradient-to-b from-slate-200 to-white/80 backdrop-blur-3xl max-h-[90vh] lg:max-h-[calc(90vh-100px)] md:max-w-[60vw] overflow-y-auto">
             {!showJourney &&             
                 <div className="flex flex-col sm:flex-row gap-2 items-center">
                     <Image src={imageLink} alt="about me" draggable={false} width={400} height={400} className="w-sm" />
@@ -46,7 +46,7 @@ export default function AboutWindow() {
 
             {showJourney && (
                 <div className="bg-white h-full">
-                    <div className="sticky top-0 flex items-center text-white bg-gradient-to-b from-blue-50 via-blue-100 to-blue-50 from-60% via-60%">
+                    <div className="sticky top-0 flex items-center text-white toolbar">
                         <button 
                             onClick={() => setShowJourney(false)}
                             className="text-xs px-2 py-1 cursor-pointer font-medium monospace text-md flex gap-1 items-center text-slate-900 hover:border-blue-50 border border-transparent rounded hover:bg-blue-300/30">
