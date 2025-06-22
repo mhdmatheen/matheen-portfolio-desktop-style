@@ -114,7 +114,7 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
             )}
 
             {!isNotificationClosed && (
-                <div className="w-[350px] flex items-start justify-between mx-auto text-balance text-xs text-shadow text-slate-500 font-medium absolute bottom-14 left-0 right-0 pl-3 pr-1 py-1 border-2 border-white/40 text-center rounded bg-stone-100 backdrop-blur-lg shadow-lg shadow-black/10">
+                <div className="sm:hidden w-[350px] flex items-start justify-between mx-auto text-balance text-xs text-shadow text-slate-500 font-medium absolute bottom-14 left-0 right-0 pl-3 pr-1 py-1 border-2 border-white/40 text-center rounded bg-stone-100 backdrop-blur-lg shadow-lg shadow-black/10">
                     This portfolio has more intereresting experience when viewed in desktop computer.
                     <button className="h-5 w-5 bg-stone-50 border border-slate-300 aspect-square text-red-500" onClick={handleNotificationClose}>&times;</button>
                 </div>
