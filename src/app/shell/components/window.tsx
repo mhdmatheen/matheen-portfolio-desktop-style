@@ -114,7 +114,7 @@ export const Window = ({
           className={`${isMobile ? "cursor-default" : "cursor-grab"
             } text-white pl-4 pr-1 flex justify-between items-start rounded-t overflow-hidden`}
         >
-          <div className="font-semibold text-shadow text-white text-stroke-3 tracking-wider py-2 flex items-center gap-2">
+          <div className="font-semibold text-shadow text-white/90 text-sm tracking-wider py-[7px] flex items-center gap-2">
             {matchedItem && React.cloneElement(matchedItem.icon, {
               className: "w-4 h-4"
             })}
