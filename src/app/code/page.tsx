@@ -8,7 +8,7 @@ export default function CodeWindow() {
         <div className="bg-white/80 p-6 lg:max-w-[80vh]">
             <WindowHeader title="Code" description="My code repository" icon="/binary-code.png" />
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="border border-slate-300 p-4 rounded mb-2">
                     <div className="flex items-center gap-2 text-md font-semibold mb-2"><Info size={20} />What is this project?</div>
                     <div className="text-slate-700 font-medium text-xs">

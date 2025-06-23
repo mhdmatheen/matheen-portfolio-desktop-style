@@ -10,6 +10,7 @@ interface WindowProps {
   onClose: () => void;
   windowType?: "window" | "dialog";
   currentWindow: string | null;
+  isBodyScrollable?: boolean;
   setCurrentWindow: (window: string | null) => void;
 }
 
@@ -19,6 +20,7 @@ export const Window = ({
   onClose,
   windowType = "window",
   currentWindow,
+  isBodyScrollable = true,
   setCurrentWindow,
 }: WindowProps) => {
   const windowRef = useRef<HTMLDivElement>(null);
@@ -129,7 +131,7 @@ export const Window = ({
         </div>
         <div className="px-[4px] pb-[4px]">
           <div className={`
-              dark:text-slate-700 overflow-y-auto rounded-b border border-gray-300
+              dark:text-slate-700 ${isBodyScrollable ? "overflow-y-auto" : "overflow-hidden"} rounded-b border border-gray-300
               ${isMobile && "max-h-[calc(100vh-100px)]"}
               ${!isMobile && "max-h-[calc(95vh-100px)]"}
           `}>{children}</div>

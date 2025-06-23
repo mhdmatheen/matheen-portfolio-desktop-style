@@ -1,4 +1,5 @@
 export const windowItems = [
+    { name: "Resume", icon: <img className="w-8 h-8" src="/cv.png" alt="about me window" draggable={false} />, app: 'Resume' },
     { name: "About Me", icon: <img className="w-8 h-8" src="/programmer.png" alt="about me window" draggable={false} />, app: 'About' },
     { name: "My Experiences", icon: <img className="w-8 h-8" src="/suitcase.png" alt="experiences window" draggable={false} />, app: 'Experiences' },
     { name: "My Projects", icon: <img className="w-8 h-8" src="/folders.png" alt="projects window" draggable={false} />, app: 'Projects' },
@@ -9,4 +10,4 @@ export const windowItems = [
 
 export const startMenuItems = windowItems.filter(item => item.app !== 'Email');
 
-export const desktopIcons = windowItems.filter(item => item.app === 'About' || item.app === 'Experiences' || item.app === 'Projects' || item.app === 'Skills');
+export const desktopIcons = windowItems.filter(item => item.app === 'Resume' || item.app === 'About' || item.app === 'Experiences' || item.app === 'Projects' || item.app === 'Skills');

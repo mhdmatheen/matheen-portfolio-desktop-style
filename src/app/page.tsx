@@ -10,25 +10,35 @@ import ProjectsWindow from "./(windows)/projects/page";
 import CodeWindow from "./code/page";
 import { desktopIcons } from "@/config/window-list";
 import FeedbackWindow from "./(windows)/feedback/page";
+import ResumeWindow from "./(windows)/resume/page";
 
 export default function Desktop() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
   const [openApps, setOpenApps] = useState<string[]>([]);
   const [currentWindow, setCurrentWindow] = useState<string | null>(null);
+  const [hideGuideArrows, setHideGuideArrows] = useState(false);
 
   const windowConfig = [
-    { title: "About", component: <About /> },
-    { title: "Experiences", component: <ExperiencesWindow /> },
-    { title: "Projects", component: <ProjectsWindow /> },
-    { title: "Skills", component: <SkillsWindow /> },
-    { title: "Code", component: <CodeWindow /> },
-    { title: "Feedback", component: <FeedbackWindow /> }
+    { title: "About", component: <About />, isBodyScrollable: true },
+    { title: "Experiences", component: <ExperiencesWindow />, isBodyScrollable: true },
+    { title: "Projects", component: <ProjectsWindow />, isBodyScrollable: true },
+    { title: "Skills", component: <SkillsWindow />, isBodyScrollable: true },
+    { title: "Code", component: <CodeWindow />, isBodyScrollable: true },
+    { title: "Feedback", component: <FeedbackWindow />, isBodyScrollable: true },
+    { title: "Resume", component: <ResumeWindow />, isBodyScrollable: false },
   ];
 
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => {
       e.preventDefault();
     };
+
+    if(localStorage.getItem('hideGuideArrows') && localStorage.getItem('hideGuideArrows') === 'true') {
+      setHideGuideArrows(true);
+    } else {
+      setHideGuideArrows(false);
+      localStorage.setItem('hideGuideArrows', 'false');
+    }
 
     document.addEventListener("contextmenu", handleContextMenu);
     return () => {
@@ -43,6 +53,8 @@ export default function Desktop() {
 
   const handleAppClick = (app: string) => {
     // if already open, focus it or do nothing
+    setHideGuideArrows(true);
+    localStorage.setItem('hideGuideArrows', 'true');
     setCurrentWindow(app);
     if (!openApps.includes(app)) {
       setOpenApps([...openApps, app]);
@@ -62,19 +74,24 @@ export default function Desktop() {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <div className="desktop-icon-container inline-flex w-fit flex-col gap-2 p-4 absolute top-0 left-0 right-0">
-        {desktopIcons.map((icon) => (
-          <div
-            key={icon.app}
-            className="desktop-icon px-4 py-2 flex flex-col gap-2 items-center cursor-pointer hover:bg-white/20 rounded border border-transparent hover:border-white/20 col-span-2"
-            onClick={() => handleAppClick(icon.app)}
-          >
-            {icon.icon}
-            <p className="text-stroke-3 text-white text-xs">{icon.name}</p>
-          </div>
-        ))}
+      <div className="flex">
+        <div className="desktop-icon-container inline-flex w-fit flex-col gap-2 p-4 absolute top-0 left-0 right-0">
+          {desktopIcons.map((icon) => (
+            <div
+              key={icon.app}
+              className="desktop-icon px-4 py-2 flex flex-col gap-2 items-center cursor-pointer hover:bg-white/20 rounded border border-transparent hover:border-white/20 col-span-2"
+              onClick={() => handleAppClick(icon.app)}
+            >
+              {icon.icon}
+              <p className="text-stroke-3 text-white text-xs">{icon.name}</p>
+            </div>
+          ))}
+        </div>
+        {!hideGuideArrows && (
+          <img className="pl-[100px] p-4 h-[128px] w-auto -z-10" src="/first-arrow.png" alt="" />
+        )}
       </div>
-      {windowConfig.map(({ title, component }) =>
+      {windowConfig.map(({ title, component, isBodyScrollable }) =>
         openWindows.includes(title) ? (
           <Window
             key={title}
@@ -82,6 +99,7 @@ export default function Desktop() {
             onClose={() => closeWindow(title)}
             currentWindow={currentWindow}
             setCurrentWindow={setCurrentWindow}
+            isBodyScrollable={isBodyScrollable}
           >
             {component}
           </Window>
