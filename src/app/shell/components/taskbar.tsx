@@ -95,19 +95,21 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
                     <div className="flex gap-2">
 
                         <div className="z-0 relative shadow-lg bg-white backdrop-blur-3xl rounded-lg border border-white/20 dark:text-slate-700 dark:border-slate-300">
-                            <div className="px-2 pt-2 pb-4">
+                            <div className="px-2 py-3">
                                 {startMenuItems.map((item) => (
                                     <button
                                         key={item.name}
                                         onClick={() => handleStartMenuItemClick(item.app)}
                                         className="flex items-center justify-start text-left gap-3 w-full px-3 py-2 text-sm text-slate-700 font-medium rounded hover:bg-gradient-to-b from-yellow-200/50 via-yellow-400/50 to-yellow-200/50 from-60% via-60% hover:shadow hover:shadow-black/10 transition-all duration-300 cursor-pointer"
                                     >
-                                        {item.icon} {item.name}
+                                        {React.cloneElement(item.icon, {
+                                        className: "w-8 h-8"
+                                    })} {item.name}
                                     </button>
                                 ))}
                             </div>
                         </div>
-                        <div className="text-white">
+                        <div className="text-white flex flex-col items-center">
                             <div className="flex flex-col items-center justify-center">
                                 <img className="z-10 shadow-lg rounded-full mx-auto h-14 w-14 -mt-8 border-2 border-white/20 text-white" src={userImage} alt="User Image" />
                                 <div className="flex gap-1 items-center justify-center mt-2">
@@ -117,9 +119,12 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
                                 <span className="text-xs text-white/70 font-medium">Senior Desktop Engineer</span>
                             </div>
 
-                            <div className="mt-4 flex flex-col gap-4 items-start justify-end px-3 py-2 text-xs font-medium">
-                                <a className="flex items-center gap-2 text-white" href="https://www.linkedin.com/in/i-am-matheen/" target="_blank" rel="noopener noreferrer"><img className="w-6 h-6" src="https://www.linkedin.com/favicon.ico" alt="linkedin" draggable={false} /> Follow me on LinkedIn</a>
-                                <a className="flex items-center gap-2 text-white" href="mailto:matheen@matheen.com" target="_blank" rel="noopener noreferrer"><img className="w-6 h-6" src="/envelope.png" alt="email" draggable={false} /> Send Email</a>
+                            <div className="flex-1">&nbsp;</div>
+
+                            <div className="mt-4 flex flex-col gap-4 items-start justify-end px-3 py-2 text-xs font-semibold">
+                                <a className="flex w-full items-center gap-2 text-white/80 hover:text-white transition-all duration-300 cursor-pointer" href="https://zorinbytes.in/" target="_blank" rel="noopener noreferrer"><img className="w-6 h-6" src="/world-wide-web.png" alt="linkedin" draggable={false} /> Zorin Bytes</a>
+                                <a className="flex w-full items-center gap-2 text-white/80 hover:text-white transition-all duration-300 cursor-pointer" href="https://www.linkedin.com/in/i-am-matheen/" target="_blank" rel="noopener noreferrer"><img className="w-6 h-6" src="https://www.linkedin.com/favicon.ico" alt="linkedin" draggable={false} /> Follow me on LinkedIn</a>
+                                <a className="flex w-full items-center gap-2 text-white/80 hover:text-white transition-all duration-300 cursor-pointer" href="mailto:matheen@matheen.com" target="_blank" rel="noopener noreferrer"><img className="w-6 h-6" src="/envelope.png" alt="email" draggable={false} /> Send Email</a>
                             </div>
                         </div>
                     </div>
