@@ -1,8 +1,8 @@
-import { IProject } from "@/config/seeds/projects";
+import { Project } from "@/config/seeds/projects";
 import Image from "next/image";
 
 interface ProjectHeadingProps {
-    project: IProject;
+    project: Project;
 }
 
 export default function ProjectHeading({ project }: ProjectHeadingProps) {

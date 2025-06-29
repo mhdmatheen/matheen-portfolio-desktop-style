@@ -1,5 +1,5 @@
 "use client";
-import { IProject, projects } from "@/config/seeds/projects";
+import { Project, projects } from "@/config/seeds/projects";
 import WindowHeader from "@/app/shell/components/window-header";
 import FinobiPage from "./pages/finobi";
 import ClientPortalPage from "./pages/clientsmsfportal";
@@ -10,8 +10,9 @@ import CustomWebsitesPage from "./pages/customwebsites";
 import { useState } from "react";
 import { CircleArrowLeft } from "lucide-react";
 import Image from "next/image";
+import DharanaPage from "./pages/dharana";
 
-const ProjectPage: React.FC<{ project: IProject }> = ({ project }) => {
+const ProjectPage: React.FC<{ project: Project }> = ({ project }) => {
     if(project) {
         switch (project.id) {
             case "finobi":
@@ -26,6 +27,8 @@ const ProjectPage: React.FC<{ project: IProject }> = ({ project }) => {
                 return <WeddingAppPage project={project} />;
             case "customwebsites":
                 return <CustomWebsitesPage project={project} />;
+            case "dharana":
+                return <DharanaPage project={project} />;
             default:
                 return <div>Coming soon...</div>;
         }

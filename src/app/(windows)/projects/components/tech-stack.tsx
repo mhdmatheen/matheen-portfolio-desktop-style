@@ -1,7 +1,7 @@
-import { IProject } from "@/config/seeds/projects";
+import { Project } from "@/config/seeds/projects";
 
 interface TechStackProps {
-    project: IProject;
+    project: Project;
 }
 
 export default function TechStack({ project }: TechStackProps) {

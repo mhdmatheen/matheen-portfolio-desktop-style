@@ -1,10 +1,10 @@
-import { IProject } from "@/config/seeds/projects";
+import { Project } from "@/config/seeds/projects";
 import TechStack from "../components/tech-stack";
 import ProjectHeading from "../components/project-heading";
 import ProjectBody from "../components/project-body";
 
 interface ClientPortalProps {
-    project: IProject;
+    project: Project;
 }
 
 export default function ClientPortal({ project }: ClientPortalProps) {

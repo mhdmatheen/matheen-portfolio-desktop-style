@@ -1,35 +1,71 @@
 "use client";
 import WindowHeader from "@/app/shell/components/window-header";
+import { Experience } from "@/config/models/experience";
 import { experiences } from "@/config/seeds/experience-data";
+import { X } from "lucide-react";
+import { useEffect, useState } from "react";
+import AllExperiences from "./components/all-experiences";
+import ExperienceDetail from "./components/experience-detail";
 
-export default function ExperiencesWindow () {
+export default function ExperiencesWindow () {  
+    const [selectedTab, setSelectedTab] = useState<string>(Experience.defaultExperience().id);
+    const [tabs, setTabs] = useState<string[]>([]);
+
+    const handleSelectedTab = (id: string) => {
+        setSelectedTab(id);
+    };
+
+    const handleTabClose = (id: string) => {
+        setTabs((prevTabs) => {
+            const newTabs = prevTabs.filter((tab) => tab !== id);
+            const idx = prevTabs.indexOf(id);
+            const nearestTab = prevTabs[idx - 1] || prevTabs[idx + 1];
+        
+            // If a nearest tab exists, set it as active, else fallback
+            if (nearestTab) {
+                setSelectedTab(nearestTab);
+            } else {
+                setSelectedTab(Experience.defaultExperience().id);
+            }
+        
+            return newTabs;
+        });        
+    };
+
     return (
-        <div className="h-full bg-white/60 sm:max-w-[50vw] md:max-w-[40vw] lg:max-w-[30vw] p-6">
-            <WindowHeader title="Experiences" description="My experiences gained over the years" icon="/suitcase.png" />
-            <div className="space-y-6 dark:text-slate-700 ">
-                {experiences.map((exp, idx) => (
-                    <div key={idx} className="bg-white backdrop-blur-md p-4 rounded-xl border border-white/20 shadow space-y-2">
-                        <div className="flex flex-col gap-2 items-start">
-                            {exp.companyLogo && (
-                                <img src={exp.companyLogo} className="w-auto h-16 mix-blend-multiply rounded" alt="" />
-                            )}
-                            <div className="w-full flex-1 space-y-2">
-                                <div>
-                                    <h1 className="text-xl font-semibold">{exp.company}</h1>
-                                    <h4 className="font-medium">{exp.role}</h4>
-                                </div>
-                                <div>
-                                    {exp.description.map((point, i) => (
-                                        <div key={i} className="text-xs text-slate-500 list-none">{point}</div>
-                                    ))}
-                                </div>
-                                <div className="text-right pt-2 flex gap-2 justify-between items-center">
-                                    <p className="text-xs text-slate-600">{exp.period}</p>
-                                    <p className="text-xs text-slate-600">{exp.location}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div className="h-full bg-white/60 max-w-full lg:max-w-[80vw] xl:max-w-[70vw] max-h-[70vh]">
+            <div className="toolbar border-b border-slate-300 pt-1 px-2 font-medium">
+                <div className="flex -mb-[1px] gap-1">
+                    <button tabIndex={-1} 
+                        className={`border-x border-t-2 text-xs tab py-1 px-3 rounded-t 
+                            ${selectedTab === Experience.defaultExperience().id ? "bg-white border-t-2 border-blue-300" : "border-slate-300"}
+                        `}
+                        onClick={() => handleSelectedTab(Experience.defaultExperience().id)}>All Experiences</button>
+                    {tabs.map((tab, idx) => (
+                        <button key={idx} tabIndex={-1} 
+                            className={`border-x border-t-2 text-xs tab py-1 pl-3 pr-1 rounded-t flex items-center gap-1 
+                                ${selectedTab === tab ? 'bg-white border-t-2 border-blue-300' : 'border-slate-300'} capitalize
+                            `} 
+                            onClick={() => handleSelectedTab(tab)}>
+                            {tab.replaceAll('-', ' ')} <X size={16} className="cursor-pointer" onClick={() => handleTabClose(tab)} />
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <div className="dark:text-slate-700 bg-white">
+                {selectedTab === Experience.defaultExperience().id && (
+                    <AllExperiences selectedExperience={(id: string) => {
+                        if(!tabs.includes(id)) {
+                            setTabs((tabs) => [...tabs, id]);
+                        }
+                        setSelectedTab(id)
+                    }} />
+                )}
+                {tabs.map((tab, idx) => (
+                    selectedTab === tab && (
+                        <ExperienceDetail key={idx} id={tab} />
+                    )
                 ))}
             </div>
         </div>

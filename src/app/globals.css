@@ -161,11 +161,11 @@ body {
   @apply sticky top-0 flex bg-gradient-to-b from-blue-50 via-blue-100 to-blue-50 from-60% via-60%;
 }
 
-input {
+input:not(.simple-input) {
   @apply w-full p-2 border border-slate-300 bg-white hover:border-blue-500 focus:border-blue-500 focus:outline-none;
 }
 
-textarea {
+textarea:not(.simple-input) {
   @apply w-full p-2 border border-slate-300 bg-white hover:border-blue-500 focus:border-blue-500 focus:outline-none;
 }
 

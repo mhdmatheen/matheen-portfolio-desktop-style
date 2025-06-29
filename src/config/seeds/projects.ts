@@ -1,4 +1,4 @@
-export interface IProject {
+export interface Project {
     id: string;
     title: string;
     description: string;
@@ -6,14 +6,13 @@ export interface IProject {
     image: string;
     banner: string;
     company: string;
-    period: string;
     techStack: {
         frontend: string[];
         backend: string[];
     };
 }
 
-export const projects: IProject[] = [
+export const projects: Project[] = [
     { 
         id: 'finobi', 
         title: 'Finobi', 
@@ -22,7 +21,6 @@ export const projects: IProject[] = [
         image: '/finobi.png' ,
         banner: '/ai-agent.svg',
         company: 'Finobi',
-        period: '2024 - Present',
         techStack: {
             frontend: ['Next JS'],
             backend: ['Next JS', 'FastAPI']
@@ -36,10 +34,9 @@ export const projects: IProject[] = [
         image: '/clientportal.png',
         banner: '/dashboard.svg',
         company: 'Carisma Solutions',
-        period: '2024 - Present',
         techStack: {
             frontend: ['Angular'],
-            backend: ['Laravel', '.NET Core']
+            backend: ['Laravel', '.NET Core 8']
         }
     },
     {
@@ -50,10 +47,9 @@ export const projects: IProject[] = [
         image: '/carisma-lms.png',
         banner: '/team-learning.svg',
         company: 'Carisma Solutions',
-        period: '2024 - Present',
         techStack: {
             frontend: ['Angular'],
-            backend: ['.NET Core']
+            backend: ['.NET Core 8']
         }
     },
     {
@@ -64,7 +60,6 @@ export const projects: IProject[] = [
         image: '/navigatio.png',
         banner: '/travel.svg',
         company: 'Navigatio',
-        period: '2024 - Present',
         techStack: {
             frontend: ['Ionic'],
             backend: ['Node JS', 'Express JS']
@@ -78,7 +73,6 @@ export const projects: IProject[] = [
         image: '/weddingapp.png',
         banner: '/party.svg',
         company: '78 Design',
-        period: '2024 - Present',
         techStack: {
             frontend: ['Ionic'],
             backend: ['Firebase']
@@ -92,10 +86,48 @@ export const projects: IProject[] = [
         image: '/customwebsites.png',
         banner: '/programming.svg',
         company: 'Benfy Digital Solutions',
-        period: '2024 - Present',
         techStack: {
             frontend: ['Astro', 'Shopify Liquid', 'Wordpress'],
             backend: ['Laravel']
+        }
+    },
+    {
+        id: 'dharana',
+        title: "Dharana",
+        description: "A yoga training mobile app to help yoga trainees to focus.",
+        tags: ['Mobile App', 'Yoga Training', 'Focus', 'Meditation'],
+        image: '',
+        banner: '/yoga.svg',
+        company: 'Freelancing',
+        techStack: {
+            frontend: ['Android Java'],
+            backend: ['Fireabase']
+        }
+    },
+    {
+        id: 'tms',
+        title: "Task Management System",
+        description: "A Task Management System for internal employees.",
+        tags: ['Task Management', 'Weekly Reports', 'Timesheet'],
+        image: '',
+        banner: '/scrum.svg',
+        company: 'Steadfast Technology Services',
+        techStack: {
+            frontend: ['ASP.NET'],
+            backend: ['.NET 3.5']
+        }
+    },
+    {
+        id: 'netsuite',
+        title: "Oracle NetSuite",
+        description: "Customizing Oracle NetSuite for clients with scripts.",
+        tags: ['NetSuite', 'ERP'],
+        image: '',
+        banner: '/scrum.svg',
+        company: 'Steadfast Technology Services',
+        techStack: {
+            frontend: ['Javascript'],
+            backend: ['NetSuite']
         }
     }
 ];
