@@ -10,13 +10,6 @@ export default function CodeWindow() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="border border-slate-300 p-4 rounded mb-2">
-                    <div className="flex items-center gap-2 text-md font-semibold mb-2"><Info size={20} />What is this project?</div>
-                    <div className="text-slate-700 font-medium text-xs">
-                        <p>This is just a simple project to show off my skills and knowledge.</p>
-                    </div>
-                </div>
-
-                <div className="border border-slate-300 p-4 rounded mb-2">
                     <div className="flex items-center gap-2 text-md font-semibold mb-2"><Info size={20} />How is this project built?</div>
                     <div className="text-slate-700 font-medium text-xs">
                         <p>This project is created using <span className="font-semibold">Next.js 15</span> with <span className="font-semibold">Tailwind CSS 4</span></p>
@@ -54,6 +47,14 @@ export default function CodeWindow() {
                     </div>
                 </div>
             </div>
+
+            <div className="pt-4 space-y-2">
+                <div className="monospace text-slate-500 font-medium flex flex-col items-center justify-center gap-2">
+                    <div className="flex items-center gap-1"><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style={{maxWidth: '2em', maxHeight: '2em', marginLeft: '.2em'}}/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style={{maxWidth: '2em', maxHeight: '2em', marginLeft: '.2em'}}/><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style={{maxWidth: '2em', maxHeight: '2em', marginLeft: '.2em'}}/></div>
+                    <div className="text-xs"><a href="http://matheen.dev/">Mohamed Matheen Portfolio</a> © 2025 by <a href="https://www.linkedin.com/in/i-am-matheen">Mohamed Matheen</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></div>
+                </div>
+            </div>
+
         </div>
     );
 }
