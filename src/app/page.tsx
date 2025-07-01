@@ -51,6 +51,10 @@ export default function Desktop() {
     setOpenApps(openApps.filter(w => w !== app));
   };
 
+  const minimizeWindow = (app: string) => {
+    setOpenWindows(openWindows.filter(w => w !== app));
+  };
+
   const handleAppClick = (app: string) => {
     // if already open, focus it or do nothing
     setHideGuideArrows(true);
@@ -97,6 +101,7 @@ export default function Desktop() {
             key={title}
             title={title}
             onClose={() => closeWindow(title)}
+            onMinimize={() => minimizeWindow(title)}
             currentWindow={currentWindow}
             setCurrentWindow={setCurrentWindow}
             isBodyScrollable={isBodyScrollable}

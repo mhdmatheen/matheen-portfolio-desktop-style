@@ -11,6 +11,8 @@ import { useState } from "react";
 import { CircleArrowLeft } from "lucide-react";
 import Image from "next/image";
 import DharanaPage from "./pages/dharana";
+import TMS from "./pages/tms";
+import NetSuite from "./pages/netsuite";
 
 const ProjectPage: React.FC<{ project: Project }> = ({ project }) => {
     if(project) {
@@ -29,6 +31,10 @@ const ProjectPage: React.FC<{ project: Project }> = ({ project }) => {
                 return <CustomWebsitesPage project={project} />;
             case "dharana":
                 return <DharanaPage project={project} />;
+            case "tms":
+                return <TMS project={project} />
+            case "netsuite":
+                    return <NetSuite project={project} />
             default:
                 return <div>Coming soon...</div>;
         }

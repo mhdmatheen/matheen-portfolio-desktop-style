@@ -73,7 +73,7 @@ body {
 }
 
 .maximize-button, .minimize-button {
-  width: 46px;
+  width: 34px;
   background: -webkit-linear-gradient(top, #b5c8dd 0%, #8ca6c3 49%, #52769f 50%, #7da4d6 100%);
   background: -moz-linear-gradient(top, #b5c8dd 0%, #8ca6c3 49%, #52769f 50%, #7da4d6 100%);
   background: -o-linear-gradient(top, #b5c8dd 0%, #8ca6c3 49%, #52769f 50%, #7da4d6 100%);
@@ -113,7 +113,7 @@ body {
 }
 
 .close-button {
-  width: 46px;
+  width: 40px;
   background: -webkit-linear-gradient(top, #d1a2a3 0%, #c1736e 49%, #b33c2e 50%, #cea6a5 100%);
   background: -moz-linear-gradient(top, #d1a2a3 0%, #c1736e 49%, #b33c2e 50%, #cea6a5 100%);
   background: -o-linear-gradient(top, #d1a2a3 0%, #c1736e 49%, #b33c2e 50%, #cea6a5 100%);
@@ -155,6 +155,11 @@ body {
     0 0 10px red,
     -1px -1px 10px rgba(255, 0, 0, 0.3),
     1px 1px 10px rgba(255, 0, 0, 0.3);
+}
+
+.window-maximize {
+  height: calc(100vh - 50px) !important;
+  width: 100vw !important;
 }
 
 .toolbar {

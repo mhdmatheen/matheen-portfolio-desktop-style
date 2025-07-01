@@ -181,7 +181,7 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
                                     {matchedItem && React.cloneElement(matchedItem.icon, {
                                         className: "w-4 h-4"
                                     })}
-                                    {currentWindow == app && <span>{app}</span>}
+                                    <span>{app}</span>
                                 </button>
                             );
                         })}

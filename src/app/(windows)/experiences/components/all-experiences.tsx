@@ -74,7 +74,7 @@ export default function AllExperiences({ selectedExperience }: AllExperiencesPro
           }, [searchTerm]);
 
         return (
-            <div className="max-w-full lg:max-w-[80vw] xl:max-w-[70vw] max-h-[70vh]">
+            <div className="max-w-full">
                 <table className="w-full" cellSpacing={5} cellPadding={10}>
                     <thead className="border-b border-blue-100 text-sm font-medium text-slate-500">
                         <tr>

@@ -123,7 +123,7 @@ export const projects: Project[] = [
         description: "Customizing Oracle NetSuite for clients with scripts.",
         tags: ['NetSuite', 'ERP'],
         image: '',
-        banner: '/scrum.svg',
+        banner: '/business.svg',
         company: 'Steadfast Technology Services',
         techStack: {
             frontend: ['Javascript'],
