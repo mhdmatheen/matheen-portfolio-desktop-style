@@ -41,7 +41,7 @@ export default function CodeWindow() {
                     <p className="text-slate-700 font-medium text-xs">My code repository is available on GitHub.</p>
                     <br />
                     <div className="text-right">
-                        <button className="win7-btn text-xs font-medium" onClick={() => window.open("https://github.com/mhdmatheen/myresume", "_blank")}>
+                        <button className="win7-btn text-xs font-medium" onClick={() => window.open("https://github.com/mhdmatheen/matheen-portfolio-desktop-style", "_blank")}>
                             Open GitHub Repository
                         </button>
                     </div>
