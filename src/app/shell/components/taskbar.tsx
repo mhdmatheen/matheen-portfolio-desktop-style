@@ -121,37 +121,20 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
 
                             <div className="flex-1">&nbsp;</div>
 
-                            <div className="mt-4 py-2 text-xs font-semibold">
-                                <div className="px-3 flex flex-col gap-4 items-start justify-end">
-                                    {secondaryMenuItems.map((item) => (
-                                        <>
-                                            {item.type === 'app' && (
-                                                <button
-                                                    key={item.name}       
-                                                    onClick={() => { if (item.app) handleStartMenuItemClick(item.app); }}
-                                                    className="flex items-center justify-start text-left gap-3 w-full text-sm text-white font-medium rounded transition-all duration-300 cursor-pointer"
-                                                >
-                                                    {React.cloneElement(item.icon, {
-                                                        className: "w-6 h-6"
-                                                    })} {item.name}
-                                                </button>
-                                            )}
-                                            {item.type === 'link' && (
-                                                <a
-                                                    key={item.name}
-                                                    href={item.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex items-center justify-start text-left gap-3 w-full text-sm text-white font-medium rounded transition-all duration-300 cursor-pointer"
-                                                >
-                                                    {React.cloneElement(item.icon, {
-                                                        className: "w-6 h-6"
-                                                    })} {item.name}
-                                                </a>
-                                            )}
-                                        </>
-                                    ))}
-                                </div>
+                            <div className="mt-4 py-2 text-xs font-semibold px-3 flex flex-col items-start justify-end w-full">
+                                {secondaryMenuItems.map((item) => (
+                                    <>
+                                        <div
+                                            key={item.name}       
+                                            onClick={() => { if(item.type === 'game' || item.type === 'app') handleStartMenuItemClick(item.app); if(item.type === 'link') window.open(item.href, '_blank'); }}
+                                            className="flex py-2 px-2 items-center justify-start text-left gap-3 w-full text-sm text-white bg-gradient-to-b hover:from-white/10 hover:via-white/20 hover:to-white/10 from-70% via-70% border border-transparent hover:border-white/10 font-medium rounded transition-all duration-300 cursor-pointer"
+                                        >
+                                            {React.cloneElement(item.icon, {
+                                                className: "w-6 h-6"
+                                            })} {item.name}
+                                        </div>
+                                    </>
+                                ))}
                             </div>
                         </div>
                     </div>

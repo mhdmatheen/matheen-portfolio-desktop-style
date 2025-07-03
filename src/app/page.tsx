@@ -12,6 +12,7 @@ import { desktopIcons } from "@/config/window-list";
 import FeedbackWindow from "./(windows)/feedback/page";
 import ResumeWindow from "./(windows)/resume/page";
 import MinesweeperWindow from "./(windows)/minesweeper/page";
+import SnakeGameWindow from "./(windows)/snakegame/page";
 
 export default function Desktop() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
@@ -28,6 +29,7 @@ export default function Desktop() {
     { title: "Feedback", component: <FeedbackWindow />, isBodyScrollable: true },
     { title: "Resume", component: <ResumeWindow />, isBodyScrollable: false },
     { title: "Minesweeper", component: <MinesweeperWindow />, isBodyScrollable: false },
+    { title: "Snake", component: <SnakeGameWindow />, isBodyScrollable: false },
   ];
 
   useEffect(() => {
