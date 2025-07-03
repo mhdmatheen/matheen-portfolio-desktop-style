@@ -109,8 +109,8 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
                                 ))}
                             </div>
                         </div>
-                        <div className="text-white flex flex-col items-center">
-                            <div className="flex flex-col items-center justify-center">
+                        <div className="text-white flex flex-col items-start">
+                            <div className="flex flex-col items-center justify-center px-4">
                                 <img className="z-10 shadow-lg rounded-full mx-auto h-14 w-14 -mt-8 border-2 border-white/20 text-white" src={userImage} alt="User Image" />
                                 <div className="flex gap-1 items-center justify-center mt-2">
                                     <p>Mohamed</p>
@@ -121,35 +121,37 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
 
                             <div className="flex-1">&nbsp;</div>
 
-                            <div className="mt-4 flex flex-col gap-4 items-start justify-end px-3 py-2 text-xs font-semibold">
-                                {secondaryMenuItems.map((item) => (
-                                    <>
-                                        {item.type === 'app' && (
-                                            <button
-                                                key={item.name}       
-                                                onClick={() => { if (item.app) handleStartMenuItemClick(item.app); }}
-                                                className="flex items-center justify-start text-left gap-3 w-full text-sm text-white font-medium rounded transition-all duration-300 cursor-pointer"
-                                            >
-                                                {React.cloneElement(item.icon, {
-                                                    className: "w-6 h-6"
-                                                })} {item.name}
-                                            </button>
-                                        )}
-                                        {item.type === 'link' && (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center justify-start text-left gap-3 w-full text-sm text-white font-medium rounded transition-all duration-300 cursor-pointer"
-                                            >
-                                                {React.cloneElement(item.icon, {
-                                                    className: "w-6 h-6"
-                                                })} {item.name}
-                                            </a>
-                                        )}
-                                    </>
-                                ))}
+                            <div className="mt-4 py-2 text-xs font-semibold">
+                                <div className="px-3 flex flex-col gap-4 items-start justify-end">
+                                    {secondaryMenuItems.map((item) => (
+                                        <>
+                                            {item.type === 'app' && (
+                                                <button
+                                                    key={item.name}       
+                                                    onClick={() => { if (item.app) handleStartMenuItemClick(item.app); }}
+                                                    className="flex items-center justify-start text-left gap-3 w-full text-sm text-white font-medium rounded transition-all duration-300 cursor-pointer"
+                                                >
+                                                    {React.cloneElement(item.icon, {
+                                                        className: "w-6 h-6"
+                                                    })} {item.name}
+                                                </button>
+                                            )}
+                                            {item.type === 'link' && (
+                                                <a
+                                                    key={item.name}
+                                                    href={item.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center justify-start text-left gap-3 w-full text-sm text-white font-medium rounded transition-all duration-300 cursor-pointer"
+                                                >
+                                                    {React.cloneElement(item.icon, {
+                                                        className: "w-6 h-6"
+                                                    })} {item.name}
+                                                </a>
+                                            )}
+                                        </>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
