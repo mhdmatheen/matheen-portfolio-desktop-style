@@ -27,7 +27,7 @@ export default function Desktop() {
     { title: "Code", component: <CodeWindow />, isBodyScrollable: true },
     { title: "Feedback", component: <FeedbackWindow />, isBodyScrollable: true },
     { title: "Resume", component: <ResumeWindow />, isBodyScrollable: false },
-    { title: "Minesweeper", component: <MinesweeperWindow onClose={() => closeWindow("Minesweeper")} />, isBodyScrollable: false },
+    { title: "Minesweeper", component: <MinesweeperWindow />, isBodyScrollable: false },
   ];
 
   useEffect(() => {
