@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Board from "./Board";
 import { generateBoard, resetGame, revealCell } from "./game-logic";
 
-export default function MinesweeperWindow({ onClose }: { onClose: () => void }) {
+export default function MinesweeperWindow() {
   const [board, setBoard] = useState(() => generateBoard(9, 9, 10));
   const [gameOver, setGameOver] = useState(false);
 
