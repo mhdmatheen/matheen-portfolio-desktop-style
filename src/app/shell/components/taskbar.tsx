@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { startMenuItems, windowItems } from "@/config/window-list";
+import { startMenuItems, windowItems, secondaryMenuItems } from "@/config/window-list";
 
 interface TaskbarProps {
     onAppClick: (app: string) => void;
@@ -99,12 +99,12 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
                                 {startMenuItems.map((item) => (
                                     <button
                                         key={item.name}
-                                        onClick={() => handleStartMenuItemClick(item.app)}
+                                        onClick={() => { if(item.app) handleStartMenuItemClick(item.app); if(item.href) window.open(item.href, '_blank'); }}
                                         className="flex items-center justify-start text-left gap-3 w-full px-3 py-2 text-sm text-slate-700 font-medium rounded hover:bg-gradient-to-b from-yellow-200/50 via-yellow-400/50 to-yellow-200/50 from-60% via-60% hover:shadow hover:shadow-black/10 transition-all duration-300 cursor-pointer"
                                     >
                                         {React.cloneElement(item.icon, {
-                                        className: "w-8 h-8"
-                                    })} {item.name}
+                                            className: "w-8 h-8"
+                                        })} {item.name}
                                     </button>
                                 ))}
                             </div>
@@ -122,9 +122,34 @@ export const Taskbar = ({ onAppClick, openApps, currentWindow, setCurrentWindow 
                             <div className="flex-1">&nbsp;</div>
 
                             <div className="mt-4 flex flex-col gap-4 items-start justify-end px-3 py-2 text-xs font-semibold">
-                                <a className="flex w-full items-center gap-2 text-white/80 hover:text-white transition-all duration-300 cursor-pointer" href="https://zorinbytes.in/" target="_blank" rel="noopener noreferrer"><img className="w-6 h-6" src="/world-wide-web.png" alt="linkedin" draggable={false} /> Zorin Bytes</a>
-                                <a className="flex w-full items-center gap-2 text-white/80 hover:text-white transition-all duration-300 cursor-pointer" href="https://www.linkedin.com/in/i-am-matheen/" target="_blank" rel="noopener noreferrer"><img className="w-6 h-6" src="https://www.linkedin.com/favicon.ico" alt="linkedin" draggable={false} /> Follow me on LinkedIn</a>
-                                <a className="flex w-full items-center gap-2 text-white/80 hover:text-white transition-all duration-300 cursor-pointer" href="mailto:matheen@matheen.com" target="_blank" rel="noopener noreferrer"><img className="w-6 h-6" src="/envelope.png" alt="email" draggable={false} /> Send Email</a>
+                                {secondaryMenuItems.map((item) => (
+                                    <>
+                                        {item.type === 'app' && (
+                                            <button
+                                                key={item.name}       
+                                                onClick={() => { if (item.app) handleStartMenuItemClick(item.app); }}
+                                                className="flex items-center justify-start text-left gap-3 w-full text-sm text-white font-medium rounded transition-all duration-300 cursor-pointer"
+                                            >
+                                                {React.cloneElement(item.icon, {
+                                                    className: "w-6 h-6"
+                                                })} {item.name}
+                                            </button>
+                                        )}
+                                        {item.type === 'link' && (
+                                            <a
+                                                key={item.name}
+                                                href={item.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center justify-start text-left gap-3 w-full text-sm text-white font-medium rounded transition-all duration-300 cursor-pointer"
+                                            >
+                                                {React.cloneElement(item.icon, {
+                                                    className: "w-6 h-6"
+                                                })} {item.name}
+                                            </a>
+                                        )}
+                                    </>
+                                ))}
                             </div>
                         </div>
                     </div>
