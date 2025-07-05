@@ -15,7 +15,8 @@
     "pdfjs-dist": "^5.3.31",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-draggable": "^4.4.6"
+    "react-draggable": "^4.4.6",
+    "recharts": "^3.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
