@@ -41,6 +41,8 @@ export const windowItems = [
 
 export const startMenuItems = windowItems.filter(item => item.type === 'window');
 
-export const desktopIcons = windowItems.filter(item => item.app === 'Resume' || item.app === 'About' || item.app === 'Experiences' || item.app === 'Projects' || item.app === 'Skills');
+export const desktopIcons = windowItems.filter(item => 
+    item.app === 'Resume' || item.app === 'About' || item.app === 'Experiences' || item.app === 'Projects' || item.app === 'Skills' || item.type === 'game'
+);
 
 export const secondaryMenuItems = windowItems.filter(item => item.type === 'game' || item.type === 'link');

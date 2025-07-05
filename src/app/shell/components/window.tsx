@@ -54,7 +54,7 @@ export const Window = ({
   const handleMaximize = () => {
     setIsMaximize(!isMaximize);
     if (isMaximize) {
-      updatePosition(posRef.current.x, posRef.current.y);
+      updatePosition(100, 25);
     } else {
       updatePosition(0, 0);
     }
@@ -127,6 +127,7 @@ export const Window = ({
           onMouseDown={onMouseDown}
           className={`${isMobile ? "cursor-default" : "cursor-grab"
             } text-white pl-4 pr-1 flex justify-between items-start rounded-t overflow-hidden`}
+          onDoubleClick={handleMaximize}
         >
           <div className="font-semibold text-shadow text-white/90 text-sm tracking-wider py-[7px] flex items-center gap-2">
             {matchedItem && React.cloneElement(matchedItem.icon, {
