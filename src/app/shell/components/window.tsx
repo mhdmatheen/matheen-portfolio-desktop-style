@@ -109,7 +109,7 @@ export const Window = ({
     <div
       ref={windowRef}
       className={`
-            absolute window backdrop-blur-3xl shadow-2xl border border-gray-300
+            absolute window shadow-2xl border border-gray-300
             ${!isMobile && !isMaximize && "max-w-[70vw] rounded-lg"}
             ${isMobile && "max-w-[100vw]"}
             ${isMaximize && 'window-maximize max-w-full'}
@@ -121,7 +121,7 @@ export const Window = ({
       }}
       onClick={() => setCurrentWindow(title)}
     >
-      <div className="backdrop-blur-3xl flex flex-col h-full">
+      <div className="backdrop-blur-sm flex flex-col h-full">
         {/* Title Bar */}
         <div
           onMouseDown={onMouseDown}

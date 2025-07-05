@@ -8,7 +8,7 @@ export default function SkillsWindow () {
     const skillTypes = Object.keys(skills) as SkillType[];
     
     return (
-        <div className="bg-white/80 py-6 max-w-[500px]">
+        <div className="bg-white/80 py-6 max-w-[500px] max-h-[80vh]">
             <div className="px-6">
                 <WindowHeader title="Skills" description="My expanding skill sets" icon="/soft-skills.png" />
             </div>
