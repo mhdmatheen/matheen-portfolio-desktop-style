@@ -12,7 +12,7 @@ export default function ResumeViewer() {
     }, []);
   
     return (
-      <div className="h-[90vh] w-full md:w-[100vh] bg-white/90 flex flex-col items-center justify-center">
+      <div className="h-[85vh] w-full md:w-[100vh] bg-white/90 flex flex-col items-center justify-center">
         {isMobile ? (
           <div className="text-center flex flex-col items-center justify-center gap-4 p-4">
             <p className="mb-2">Mobile browser doesn't support embedded PDF preview 😓</p>
