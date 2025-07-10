@@ -69,7 +69,7 @@ export const experiences: Experience[] = [
         </ul>
       </div>
     ),
-    projects: []
+    projects:  projects.filter(project => project.id == 'shopify')
   },
   {
     id: "benfy",
@@ -108,7 +108,7 @@ export const experiences: Experience[] = [
         </ul>
       </div>
     ),
-    projects: projects.filter(project => project.id == 'dharana')
+    projects: projects.filter(project => project.id == 'dharana' || project.id == 'lojo')
   },
   {
     id: "steadfast",

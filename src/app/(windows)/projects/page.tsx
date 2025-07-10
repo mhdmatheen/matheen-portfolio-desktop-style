@@ -13,6 +13,8 @@ import Image from "next/image";
 import DharanaPage from "./pages/dharana";
 import TMS from "./pages/tms";
 import NetSuite from "./pages/netsuite";
+import Lojo from "./pages/lojo";
+import Shopify from "./pages/shopify";
 
 const ProjectPage: React.FC<{ project: Project }> = ({ project }) => {
     if(project) {
@@ -35,6 +37,10 @@ const ProjectPage: React.FC<{ project: Project }> = ({ project }) => {
                 return <TMS project={project} />
             case "netsuite":
                     return <NetSuite project={project} />
+            case "lojo":
+                    return <Lojo project={project} />
+            case "shopify":
+                    return <Shopify project={project} />
             default:
                 return <div>Coming soon...</div>;
         }

@@ -53,6 +53,19 @@ export const projects: Project[] = [
         }
     },
     {
+        id: 'shopify',
+        title: 'Shopify Websites',
+        description: 'E-commerce websites development using Shopify Platform',
+        tags: ['E-commerce Websites', 'Shopify', 'Liquid'],
+        image: '/customwebsites.png',
+        banner: '/shopping.svg',
+        company: 'Perficient (Ameex)',
+        techStack: {
+            frontend: ['Shopify Liquid'],
+            backend: ['Shopify']
+        }
+    },
+    {
         id: 'navigatio',
         title: 'Navigatio Flight Ticket Booking System',
         description: 'A Flight Ticket Booking System for Navigatio',
@@ -102,6 +115,19 @@ export const projects: Project[] = [
         techStack: {
             frontend: ['Android Java'],
             backend: ['Fireabase']
+        }
+    },
+    {
+        id: 'lojo',
+        title: "Lojo Commerce",
+        description: "An e-commerce platform for selling groceries.",
+        tags: ['E-commerce', 'Product Management', 'Order Management', 'Payment Processing'],
+        image: '',
+        banner: '/shopping.svg',
+        company: 'Freelancing',
+        techStack: {
+            frontend: ['Magento'],
+            backend: ['Magento']
         }
     },
     {
