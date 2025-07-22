@@ -34,7 +34,7 @@ export default function ExperiencesWindow () {
 
     return (
         <div className="h-full bg-white/60 max-w-full max-h-[70vh]">
-            <div className="toolbar border-b border-slate-300 pt-1 px-2 font-medium">
+            <div className="toolbar border-b border-slate-300 pt-1 px-2 font-medium z-30">
                 <div className="flex -mb-[1px] gap-1">
                     <button tabIndex={-1} 
                         className={`border-x border-t-2 text-xs tab py-1 px-3 rounded-t 

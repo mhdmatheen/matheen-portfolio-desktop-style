@@ -22,7 +22,7 @@ export default function ExperienceDetail({ id }: ExperienceDetailProps) {
                     <div className="h-[1px] bg-slate-300"></div>
                     <div className="p-6 space-y-4">
                         <h2 className="italic text-slate-500">Projects I have worked on:</h2>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                             {experience?.projects?.map((project, idx) => (
                                 <div key={idx} className="space-y-2">
                                     <div>
