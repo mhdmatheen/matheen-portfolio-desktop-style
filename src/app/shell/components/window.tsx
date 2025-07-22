@@ -142,12 +142,14 @@ export const Window = ({
             >
               <Minus size={16} />
             </button>
-            <button
-              className="maximize-button text-white text-lg px-2 py-[3px]"
-              onClick={handleMaximize}
-            >
-              <RectangleHorizontal size={16} />
-            </button>
+            {matchedItem?.isMaximizable && (
+                <button
+                    className="maximize-button text-white text-lg px-2 py-[3px]"
+                    onClick={handleMaximize}
+                >
+                    <RectangleHorizontal size={16} />
+                </button>
+            )}
             <button
               className="close-button text-white text-lg px-2 py-[3px] rounded-br-lg"
               onClick={onClose}
