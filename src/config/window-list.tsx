@@ -1,8 +1,8 @@
 export const windowItems = [
     { name: "Resume", icon: <img className="w-8 h-8" src="/cv.png" alt="about me window" draggable={false} />, app: 'Resume', type: 'window', isMaximizable: false },
-    { name: "About Me", icon: <img className="w-8 h-8" src="/programmer.png" alt="about me window" draggable={false} />, app: 'About', type: 'window', isMaximizable: true },
+    { name: "About Me", icon: <img className="w-8 h-8" src="/programmer.png" alt="about me window" draggable={false} />, app: 'About', type: 'window', isMaximizable: false },
     { name: "My Experiences", icon: <img className="w-8 h-8" src="/suitcase.png" alt="experiences window" draggable={false} />, app: 'Experiences', type: 'window', isMaximizable: true },
-    { name: "My Projects", icon: <img className="w-8 h-8" src="/folders.png" alt="projects window" draggable={false} />, app: 'Projects', type: 'window', isMaximizable: true },
+    { name: "My Projects", icon: <img className="w-8 h-8" src="/folders.png" alt="projects window" draggable={false} />, app: 'Projects', type: 'window', isMaximizable: false },
     { name: "My Skills", icon: <img className="w-8 h-8" src="/soft-skills.png" alt="skills window" draggable={false} />, app: 'Skills', type: 'window', isMaximizable: true },
     { name: "About this Project", icon: <img className="w-8 h-8" src="/binary-code.png" alt="code window" draggable={false} />, app: 'Code', type: 'window', isMaximizable: false },
     { name: "Feedback", icon: <img className="w-8 h-8" src="/chat.png" alt="feedback window" draggable={false} />, app: 'Feedback', type: 'window', isMaximizable: false },
